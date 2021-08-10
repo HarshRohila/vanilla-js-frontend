@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CK-12 Assignment - Table of Content</title>
+		<style>
+			.active .right,
+			.down {
+				display: none;
+			}
+			.active .down,
+			.right {
+				display: initial;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Test</h1>
+
+		<template data-name="chapters-list">
+			<ul class="list"></ul>
+		</template>
+
+		<template data-name="loading">
+			<h1 class="loading">loading...</h1>
+		</template>
+
+		<template data-name="chapter">
+			<li>
+				<svg
+					class="right"
+					height="14"
+					width="14"
+					stroke-width="2"
+					stroke="#1D1D1D"
+				>
+					<path transform="translate(5,1)" d="M0 0 L6 6 L0 12 L6 6 Z"></path>
+				</svg>
+				<svg
+					class="down"
+					height="10"
+					width="14"
+					stroke-width="2"
+					stroke="#1D1D1D"
+				>
+					<path transform="translate(1,2)" d="M0 0 L6 6 L12 0 L6 6 Z"></path>
+				</svg>
+				<h1 class="title"></h1>
+				<span class="progress"></span>
+			</li>
+		</template>
+
+		<template data-name="lessons-list">
+			<ul class="list"></ul>
+		</template>
+
+		<template data-name="lesson">
+			<li><h3 class="title"></h3></li>
+		</template>
+
+		<script type="module" src="/assets/js/index.js"></script>
+	</body>
+</html>
