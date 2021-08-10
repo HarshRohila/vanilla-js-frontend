@@ -3,6 +3,9 @@
 	<head>
 		<title>CK-12 Assignment - Table of Content</title>
 		<style>
+			:root {
+				--color-primary: #00a353;
+			}
 			.active .right,
 			.down {
 				display: none;
@@ -11,6 +14,24 @@
 			.right {
 				display: initial;
 			}
+			li:hover {
+				cursor: pointer;
+			}
+			.chapter-item:hover {
+				background-color: var(--color-primary);
+				color: white;
+			}
+			.chapters.list {
+				max-width: 1020px;
+				width: 100%;
+			}
+			.chapter-item {
+				padding: 15px 20px;
+			}
+			.chapter-item h1 {
+				display: inline;
+				font-size: 18px;
+			}
 		</style>
 	</head>
 
@@ -18,7 +39,7 @@
 		<h1>Test</h1>
 
 		<template data-name="chapters-list">
-			<ul class="list"></ul>
+			<ul class="chapters list"></ul>
 		</template>
 
 		<template data-name="loading">
@@ -26,7 +47,7 @@
 		</template>
 
 		<template data-name="chapter">
-			<li>
+			<li class="chapter-item">
 				<svg
 					class="right"
 					height="14"
