@@ -12,6 +12,7 @@ function render(parent) {
 		const { element: listElement } = renderComponent("chapters-list", parent);
 
 		console.log(chapters);
+		chapters.sort((first, sec) => first.sequenceNO - sec.sequenceNO);
 		chapters.forEach((chapter, chapterIndex) => {
 			const { element } = Chapter.render(listElement, { chapter });
 
