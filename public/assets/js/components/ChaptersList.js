@@ -9,9 +9,10 @@ function render(parent) {
 	const renderedLessons = {};
 
 	ChapterService.findAll().then((chapters) => {
+		loadingComponent.remove();
+
 		const { element: listElement } = renderComponent("chapters-list", parent);
 
-		console.log(chapters);
 		chapters.sort((first, sec) => first.sequenceNO - sec.sequenceNO);
 		chapters.forEach((chapter, chapterIndex) => {
 			const { element } = Chapter.render(listElement, { chapter });
@@ -19,7 +20,8 @@ function render(parent) {
 			if (chapter.status === "COMPLETE") return;
 
 			const lessonsContainer = element.querySelector(".lessons-container");
-			element.addEventListener("click", () => {
+			const chapterName = element.querySelector(".name");
+			chapterName.addEventListener("click", () => {
 				if (!renderedLessons[chapterIndex]) {
 					renderedLessons[chapterIndex] = LessonsList.render(lessonsContainer, {
 						chapter,
@@ -33,8 +35,6 @@ function render(parent) {
 				}
 			});
 		});
-
-		loadingComponent.remove();
 	});
 }
 

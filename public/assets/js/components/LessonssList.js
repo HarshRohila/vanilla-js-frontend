@@ -13,7 +13,7 @@ function render(parent, props) {
 		renderedComponent.component = lessonsList;
 
 		lessons.sort((first, sec) => first.sequenceNO - sec.sequenceNO);
-		lessons.forEach((lesson, lessonIndex) => {
+		lessons.forEach((lesson) => {
 			Lesson.render(lessonsList.element, { lesson, chapter });
 		});
 	});
