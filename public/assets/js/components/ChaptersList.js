@@ -18,9 +18,10 @@ function render(parent) {
 
 			if (chapter.status === "COMPLETE") return;
 
+			const lessonsContainer = element.querySelector(".lessons-container");
 			element.addEventListener("click", () => {
 				if (!renderedLessons[chapterIndex]) {
-					renderedLessons[chapterIndex] = LessonsList.render(element, {
+					renderedLessons[chapterIndex] = LessonsList.render(lessonsContainer, {
 						chapter,
 					});
 					element.classList.add("active");

@@ -29,6 +29,17 @@
 				padding: 0;
 			}
 
+			.lessons-container {
+				transition: all 0.2s ease-out 0s;
+			}
+			.chapter-item.active .lessons-container {
+				margin-top: 0;
+			}
+			.chapter-item:not(.active) .lessons-container {
+				margin-top: -350px;
+				box-sizing: border-box;
+			}
+
 			@media only screen and (min-width: 768px) {
 				.chapters.list {
 					max-width: calc(100% - 200px);
@@ -132,6 +143,9 @@
 					<h1 class="title"></h1>
 					<span class="progress"></span>
 				</div>
+				<section style="overflow: hidden">
+					<section class="lessons-container"></section>
+				</section>
 			</li>
 		</template>
 
