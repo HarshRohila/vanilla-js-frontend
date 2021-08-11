@@ -11,6 +11,16 @@
 				overflow-y: scroll;
 			}
 
+			.lesson {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.lessons.list {
+				padding: 0 40px;
+			}
+
 			.chapters.list {
 				max-width: 100%;
 				width: 100%;
@@ -130,7 +140,10 @@
 		</template>
 
 		<template data-name="lesson">
-			<li><h3 class="title"></h3></li>
+			<li class="lesson">
+				<h3 class="title"></h3>
+				<p class="status"></p>
+			</li>
 		</template>
 
 		<script type="module" src="/assets/js/index.js"></script>

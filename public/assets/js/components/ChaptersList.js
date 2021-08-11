@@ -21,7 +21,7 @@ function render(parent) {
 			element.addEventListener("click", () => {
 				if (!renderedLessons[chapterIndex]) {
 					renderedLessons[chapterIndex] = LessonsList.render(element, {
-						chapterId: chapter.id,
+						chapter,
 					});
 					element.classList.add("active");
 				} else {
