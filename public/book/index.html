@@ -26,6 +26,22 @@
 
 				.chapter-item:not(.active) {
 					box-shadow: rgb(187, 187, 187) 0px 1px 3px 0px;
+					width: calc(100% - 40px);
+					box-sizing: border-box;
+					margin: 0 20px;
+				}
+
+				.chapter-item {
+					transition: all 0.025s ease-out 0s;
+				}
+
+				.chapter-item.active {
+					box-shadow: rgb(187, 187, 187) 0px 16px 26px 5px;
+					margin: 0 0 20px;
+				}
+
+				.chapter-item ~ .chapter-item.active {
+					margin: 20px 0;
 				}
 			}
 
@@ -102,7 +118,7 @@
 		</template>
 
 		<template data-name="lessons-list">
-			<ul class="list"></ul>
+			<ul class="lessons list"></ul>
 		</template>
 
 		<template data-name="lesson">
