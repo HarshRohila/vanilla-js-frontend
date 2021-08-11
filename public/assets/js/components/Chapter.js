@@ -5,6 +5,11 @@ function render(parent, props) {
 
 	const { title, completeCount, childrenCount, status, sequenceNO } =
 		props.chapter;
+
+	if (status === "COMPLETE") {
+		component.element.classList.add("disable");
+	}
+
 	const titleElement = component.element.querySelector(".title");
 	titleElement.innerText = `${sequenceNO}. ${title}`;
 

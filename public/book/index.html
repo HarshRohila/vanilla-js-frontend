@@ -63,10 +63,18 @@
 			li:hover {
 				cursor: pointer;
 			}
-			.chapter-item:hover > div {
+			.chapter-item.disable > div {
+				cursor: not-allowed;
+			}
+			.chapter-item.disable svg {
+				visibility: hidden;
+			}
+
+			.chapter-item:hover:not(.disable) > div {
 				background-color: var(--color-primary);
 				color: white;
 			}
+
 			.chapter-item:hover svg {
 				stroke: white;
 			}

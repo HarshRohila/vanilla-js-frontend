@@ -16,6 +16,8 @@ function render(parent) {
 		chapters.forEach((chapter, chapterIndex) => {
 			const { element } = Chapter.render(listElement, { chapter });
 
+			if (chapter.status === "COMPLETE") return;
+
 			element.addEventListener("click", () => {
 				if (!renderedLessons[chapterIndex]) {
 					renderedLessons[chapterIndex] = LessonsList.render(element, {
